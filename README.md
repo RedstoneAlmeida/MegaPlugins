@@ -7,10 +7,10 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 
 
 ## - SuperCmds
-| Commands | Command Functions | Permission | Aliases |
-| -------- | ----------------| ----------- | ------- |
-| /fly | enable flyght in you server | fly.command | /flyght |
-| /gmd | change you gamemode in server | gmd.command | /gmode | 
+| Commands | SubCommand | Command Functions | Permission | Aliases |
+| -------- | -------- | ----------------| ----------- | ------- |
+| /fly | Not found | enable flyght in you server | fly.command | /flyght |
+| /gmd | [1,2,3,4] | change you gamemode in server | gmd.command | /gmode | 
 
 ### Features
 - Enable or Disable Commands in commands.yml

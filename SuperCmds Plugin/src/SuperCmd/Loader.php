@@ -10,6 +10,7 @@ use pocketmine\utils\Config;
 
 use SuperCmd\Commands\FlyCommand;
 use SuperCmd\Commands\GameModeCommand;
+use SuperCmd\Commands\EffectCommand;
 
 class Loader extends PluginBase{
     
@@ -19,6 +20,7 @@ class Loader extends PluginBase{
         $this->config = new Config($this->getDataFolder() . "commands.yml" , Config::YAML, Array(
             "fly" => true,
             "gamemode" => true,
+            "effect" => true,
             ));
         
         if($this->config->get("fly") === true){
@@ -26,6 +28,9 @@ class Loader extends PluginBase{
         }
         if($this->config->get("gamemode") === true){
          $server->getCommandMap()->register('gmd', new GameModeCommand($this,"gmd")); 
+        }
+        if($this->config->get("effect") === true){
+         $server->getCommandMap()->register('seffect', new EffectCommand($this,"seffect")); 
         }
     }
 }

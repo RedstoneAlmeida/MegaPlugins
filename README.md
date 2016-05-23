@@ -12,8 +12,10 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 | /fly | enable flyght in you server | fly.command | /flyght |
 | /gmd | change you gamemode in server | gmd.command | /gmode | 
 
+### Features
+- Enable or Disable Commands in commands.yml
+
 ### To-Do
 - Events
 - More Commands
 - Change Lang in Config
-- Disable or Enable Commands

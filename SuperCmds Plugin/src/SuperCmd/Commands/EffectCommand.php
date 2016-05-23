@@ -57,6 +57,8 @@ class EffectCommand extends Command{
                         }
                         
                     }
+        } else {
+            $sender->sendMessage("§cEstá faltando o Efeito, Amplifier e Duração!");
         }
    }
    

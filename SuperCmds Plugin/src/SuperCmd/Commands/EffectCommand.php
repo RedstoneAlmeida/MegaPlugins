@@ -48,17 +48,17 @@ class EffectCommand extends Command{
                                         } 
 
                                     } else {
-                                        $sender->sendMessage("§cEstá faltando a duração!");
+                                        $sender->sendMessage("§c/seffect $args[0] $args[1] <duration>");
                                     }
                             }
                             
                         } else {
-                            $sender->sendMessage("§cEstá faltando o Amplifier e Duração!");
+                            $sender->sendMessage("§c/seffect $args[0] <amplifier> <duration>");
                         }
                         
                     }
         } else {
-            $sender->sendMessage("§cEstá faltando o Efeito, Amplifier e Duração!");
+            $sender->sendMessage("§c/seffect <effect> <amplifier> <duration>");
         }
    }
    

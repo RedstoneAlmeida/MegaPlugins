@@ -39,8 +39,8 @@ class GameModeCommand extends Command{
                 }
                 return true;
         } else {
-            $sender->sendMessage("§bModo de jogo ".$args[0]." não encontrado");
-        }
+                    $sender->sendMessage("§cEstá faltando o Modo de Jogo!");
+                }
    }
    
 }

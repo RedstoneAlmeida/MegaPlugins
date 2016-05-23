@@ -16,8 +16,17 @@ class Loader extends PluginBase{
     public function onEnable(){
         @mkdir($this->getDataFolder());
         $server = Server::getInstance();
-	$server->getCommandMap()->register('fly', new FlyCommand($this,"fly"));
-        $server->getCommandMap()->register('gmd', new GameModeCommand($this,"gmd"));
+        $this->config = new Config($this->getDataFolder() . "commands.yml" , Config::YAML, Array(
+            "fly" => true,
+            "gamemode" => true,
+            ));
+        
+        if($this->config->get("fly") === true){
+         $server->getCommandMap()->register('fly', new FlyCommand($this,"fly"));   
+        }
+        if($this->config->get("gamemode") === true){
+         $server->getCommandMap()->register('gmd', new GameModeCommand($this,"gmd")); 
+        }
     }
 }
     

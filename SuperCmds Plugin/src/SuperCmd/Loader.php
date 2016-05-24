@@ -64,9 +64,10 @@ class Loader extends PluginBase{
         if($this->config->get("fly") === true){
             if($this->config->get("gamemode") === true){
                 if($this->config->get("effect") === true){
-                    $server->getCommandMap()->register('seffect', new EffectCommand($this,"seffect")); 
+                    if($this->config->get("motd.cmd") === true){
                     $this->getLogger()->info(" ");
                     $this->getLogger()->info("§aALL Commands Enabled...");
+                    }
                     
                 }
             }

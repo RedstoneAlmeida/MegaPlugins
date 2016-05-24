@@ -32,10 +32,10 @@ class FlyCommand extends Command{
 			return true;
 		}
                 if ($sender->getAllowFlight()){
-                    $sender->sendMessage("§bDesligando o Fly");
+                    $sender->sendMessage($this->plugin->langs->get("fly.msg.off"));
                     $sender->setAllowFlight(false);
                 } else {
-                    $sender->sendMessage("§bLigando o Fly");
+                    $sender->sendMessage($this->plugin->langs->get("fly.msg.on"));
                     $sender->setAllowFlight(true);
                 }
    }

@@ -17,6 +17,14 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 - Enable or Disable Commands in commands.yml
 - Change Lang in Config
 
+### Variables
+| Variable | Info | Example | Config |
+| ------- | ---- | ------ | ----- |
+| {EFFECT} | SET EFFECT MESSAGE | Seted {EFFECT} to You | you_lang.yml |
+| {AMPLIFIER} | SET AMPLIFIER TO EFFECT | Seted {AMPLIFER} to You Effect | you_lang.yml |
+| {SECONDS} | SET SECONDS TO EFFECT | Seted {SECONDS} to You Effect | you_lang.yml |
+| {GM} | SET YOU GAMEMODE | Changed you Gamemode to {GM} | you_lang.yml |
+
 ### To-Do
 - Events
 - More Commands

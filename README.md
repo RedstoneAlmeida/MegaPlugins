@@ -12,10 +12,12 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 | /fly | <not found> | enable flyght in you server | fly.command | /flyght |
 | /gmd | [1,2,3,4] | change you gamemode in server | gmd.command | /gmode | 
 | /seffect | [effectID] [effectAmplifier] [effectDuration] | add to you player effect | effect.command | /seffecter | 
+| /motd | [you motd] | set you server motd | motd.command | /smotd |
 
 ### Features
 - Enable or Disable Commands in commands.yml
 - Change Lang in Config
+- Set you server Motd
 
 ### Variables
 | Variable | Info | Example | Config |

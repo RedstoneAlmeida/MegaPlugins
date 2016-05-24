@@ -67,6 +67,8 @@ class EffectCommand extends Command{
         } else {
             $sender->sendMessage("§c/seffect <effect> <amplifier> <duration>");
         }
+   } else {
+       $sender->sendMessage($this->plugin->default->get("console.msg"));
    }
    }
    

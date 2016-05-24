@@ -40,7 +40,7 @@ class FlyCommand extends Command{
                     $sender->setAllowFlight(true);
                 }
                 } else {
-                    $sender->sendMessage("§cVocê está no console bobão");
+                    $sender->sendMessage($this->plugin->default->get("console.msg"));
                 }
    }
    

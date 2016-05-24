@@ -11,6 +11,7 @@ use pocketmine\utils\Config;
 use SuperCmd\Commands\FlyCommand;
 use SuperCmd\Commands\GameModeCommand;
 use SuperCmd\Commands\EffectCommand;
+use SuperCmd\Commands\MotdCommand;
 
 class Loader extends PluginBase{
     
@@ -23,10 +24,14 @@ class Loader extends PluginBase{
             "fly" => true,
             "gamemode" => true,
             "effect" => true,
+            "motd.cmd" => true,
             ));
         $this->default = new Config($this->getDataFolder() . "config.yml" , Config::YAML, Array(
             "languages.folder" => "en_us",
             "hint.folder" => true,
+            "console.msg" => "§cRun command in game",
+            "motd.system" => true,
+            "motd" => "Testing Motd",
             ));
         $langs = $this->default->get("languages.folder");
         $this->langs = new Config($this->getDataFolder() . "langs/" . $langs.".yml" , Config::YAML, Array(
@@ -52,6 +57,10 @@ class Loader extends PluginBase{
          $server->getCommandMap()->register('seffect', new EffectCommand($this,"seffect")); 
          $this->getLogger()->info("§aSEffect is Enabled...");
         }
+        if($this->config->get("motd.cmd") === true){
+         $server->getCommandMap()->register('motd', new MotdCommand($this,"motd")); 
+         $this->getLogger()->info("§aMotdCMD is Enabled...");
+        }
         if($this->config->get("fly") === true){
             if($this->config->get("gamemode") === true){
                 if($this->config->get("effect") === true){
@@ -67,6 +76,14 @@ class Loader extends PluginBase{
             $this->getLogger()->info(" ");
             $this->getLogger()->info("§aHints Enabled...");
         }
+        
+        if($this->default->get("motd.system") === true){
+            $motd = $this->default->get("motd");
+            $this->getServer()->getNetwork()->setName($motd);
+            $this->getLogger()->info(" ");
+            $this->getLogger()->info("§aMotd Enabled...");
+        }
+        
         $this->getLogger()->info(" ");
         $this->getLogger()->info(" ");
         $this->getLogger()->info("§b*§7-§b*§7-§b*§7-§b*§7-§b*§7-§b*");

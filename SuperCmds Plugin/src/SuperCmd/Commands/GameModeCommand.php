@@ -51,6 +51,8 @@ class GameModeCommand extends Command{
         } else {
                     $sender->sendMessage("§c/gmd <mode>");
                 }
+   } else {
+       $sender->sendMessage($this->plugin->default->get("console.msg"));
    }
    }
    

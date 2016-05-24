@@ -42,8 +42,14 @@ class EffectCommand extends Command{
                                     if(isset($args[2])) {
                                         switch ($args[2]) {
                                             case "$args[2]":
+                                                $line = "\n";
+                                                $effect = $this->plugin->langs->get("effect.msg.use");
+                                                $effect = str_replace('{LINE}', $line, $effect);
+                                                $effect = str_replace('{EFFECT}', $args[0], $effect);
+                                                $effect = str_replace('{AMP}', $args[1], $effect);
+                                                $effect = str_replace('{SECONDS}', $args[2], $effect);
                                                 $sender->getPlayer()->addEffect(Effect::getEffect($args[0])->setAmplifier($args[1])->setDuration($args[2]*20)->setVisible(false));
-                                                $sender->sendMessage("§aVocê adicionou o efeito $args[0] * $args[1] por $args[2]s");
+                                                $sender->sendMessage($effect);
                                                 return true;
                                         } 
 

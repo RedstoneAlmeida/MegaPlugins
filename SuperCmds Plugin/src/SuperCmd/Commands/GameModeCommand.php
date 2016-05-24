@@ -39,7 +39,7 @@ class GameModeCommand extends Command{
                 }
                 return true;
         } else {
-                    $sender->sendMessage("§c/gmd <mode>");
+                    $sender->sendMessage("§cEstá faltando o Modo de Jogo!");
                 }
    }
    

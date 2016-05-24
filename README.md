@@ -32,4 +32,4 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 - More Commands
 
 ### Last Update
-- Viewer: [Commit](https://github.com/RedstoneAlmeida/MegaPlugins/commit/336d14e4baf38e2a26d8f21dfe429613751b0f2a)
+- Viewer: [Commit](https://github.com/RedstoneAlmeida/MegaPlugins/commit/f6edd288c45afd5ba6b879f7448c4662c72302c9)

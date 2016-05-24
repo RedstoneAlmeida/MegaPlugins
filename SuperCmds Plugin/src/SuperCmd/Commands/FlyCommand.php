@@ -31,12 +31,16 @@ class FlyCommand extends Command{
 		if(!$this->testPermission($sender)){
 			return true;
 		}
+                if($sender instanceof Player){
                 if ($sender->getAllowFlight()){
                     $sender->sendMessage($this->plugin->langs->get("fly.msg.off"));
                     $sender->setAllowFlight(false);
                 } else {
                     $sender->sendMessage($this->plugin->langs->get("fly.msg.on"));
                     $sender->setAllowFlight(true);
+                }
+                } else {
+                    $sender->sendMessage("§cVocê está no console bobão");
                 }
    }
    

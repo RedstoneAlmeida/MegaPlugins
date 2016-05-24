@@ -33,6 +33,7 @@ class EffectCommand extends Command{
 		if(!$this->testPermission($sender)){
 			return true;
 		}
+                if($sender instanceof Player){
                 if(isset($args[0])) {
                     switch ($args[0]) {
                         case "$args[0]":
@@ -66,6 +67,7 @@ class EffectCommand extends Command{
         } else {
             $sender->sendMessage("§c/seffect <effect> <amplifier> <duration>");
         }
+   }
    }
    
 }

@@ -31,6 +31,7 @@ class GameModeCommand extends Command{
 		if(!$this->testPermission($sender)){
 			return true;
 		}
+                if($sender instanceof Player){
                 if(isset($args[0])) {
                     if ($args[0] !== $sender->getGamemode()) {
                             $sender->setGamemode($args[0]);
@@ -39,8 +40,9 @@ class GameModeCommand extends Command{
                 }
                 return true;
         } else {
-                    $sender->sendMessage("§c/gmd <mode>");
+                    $sender->sendMessage("§cEstá faltando o Modo de Jogo!");
                 }
+   }
    }
    
 }

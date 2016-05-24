@@ -17,6 +17,7 @@ class Loader extends PluginBase{
     public function onEnable(){
         @mkdir($this->getDataFolder());
         @mkdir($this->getDataFolder() . "langs/");
+        @mkdir($this->getDataFolder() . "hints/");
         $server = Server::getInstance();
         $this->config = new Config($this->getDataFolder() . "commands.yml" , Config::YAML, Array(
             "fly" => true,

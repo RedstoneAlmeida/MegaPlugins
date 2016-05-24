@@ -1,13 +1,9 @@
 <?php
 
-namespace pocketmine\entity;
+namespace hits;
 
-use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\entity\EntityRegainHealthEvent;
-use pocketmine\network\Network;
-use pocketmine\network\protocol\MobEffectPacket;
-use pocketmine\Player;
-
+use SuperCmd\Loader;
+use SuperCmd\Commands\EffectCommand as Effect;
 
 class Effect{
 	const SPEED = 1;

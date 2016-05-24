@@ -33,6 +33,8 @@ class Loader extends PluginBase{
             "fly.msg.off" => "§bFly Off",
             "fly.msg.on" => "§bFly On",
             "effect.msg.use" => "§bYou gived effect {EFFECT} * {AMP} for {SECONDS} seconds",
+            "gamemode.msg" => "§bChanged Gamemode to {GM}",
+            "gamemode.notfound" => "§bGameMode {GM} not found",
             ));
         $this->saveResource("langs/pt_br-example.yml");
         $this->getLogger()->info("§b*§7-§b*§7-§b*§7-§b*§7-§b*§7-§b*");

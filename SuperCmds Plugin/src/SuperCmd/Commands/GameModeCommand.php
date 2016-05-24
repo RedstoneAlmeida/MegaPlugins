@@ -33,14 +33,23 @@ class GameModeCommand extends Command{
 		}
                 if($sender instanceof Player){
                 if(isset($args[0])) {
-                    if ($args[0] !== $sender->getGamemode()) {
+                    if ($args[0] >= 0) {
+                        if ($args[0] <= 3) {
+                            $gm = $this->plugin->langs->get("gamemode.msg");
+                            $gm = str_replace('{GM}', $args[0], $gm);
                             $sender->setGamemode($args[0]);
-                            $sender->sendMessage("§bSeu modo de jogo foi alterado para ".$args[0]);
+                            $sender->sendMessage($gm);
+                            
+                        }  else {
+                            $gmnt = $this->plugin->langs->get("gamemode.notfound");
+                            $gmnt = str_replace('{GM}', $args[0], $gmnt);
+                    $sender->sendMessage($gmnt);
+                }
                     
                 }
                 return true;
         } else {
-                    $sender->sendMessage("§cEstá faltando o Modo de Jogo!");
+                    $sender->sendMessage("§c/gmd <mode>");
                 }
    }
    }

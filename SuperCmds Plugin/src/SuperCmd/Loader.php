@@ -31,6 +31,7 @@ class Loader extends PluginBase{
         $this->langs = new Config($this->getDataFolder() . "langs/" . $langs.".yml" , Config::YAML, Array(
             "fly.msg.off" => "§bFly Off",
             "fly.msg.on" => "§bFly On",
+            "effect.msg.use" => "§bYou gived effect {EFFECT} * {AMP} for {SECONDS} seconds",
             ));
         $this->saveResource("langs/pt_br-example.yml");
         $this->getLogger()->info("§b*§7-§b*§7-§b*§7-§b*§7-§b*§7-§b*");

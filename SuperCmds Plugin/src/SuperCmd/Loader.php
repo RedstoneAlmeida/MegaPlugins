@@ -121,7 +121,7 @@ class Loader extends PluginBase{
         foreach($this->getServer()->getOnlinePlayers() as $players) {
             $players->getPlayer()->setFood(15);
             if($this->default->get("use.regenation.system") === true){
-                $players->addEffect(Effect::getEffect(10)->setAmplifier(1)->setDuration(2*20)->setVisible(false));
+                $players->setHealth($players->getPlayer()->getHealth() + 1);
             }
         }
     }

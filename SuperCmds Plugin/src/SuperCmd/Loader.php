@@ -8,6 +8,8 @@ use pocketmine\Server;
 
 use pocketmine\scheduler\CallbackTask;
 
+use pocketmine\entity\Effect;
+
 use pocketmine\utils\Config;
 
 use SuperCmd\Commands\FlyCommand;
@@ -36,6 +38,8 @@ class Loader extends PluginBase{
             "console.msg" => "§cRun command in game",
             "motd.system" => true,
             "motd" => "Testing Motd [{ONPLAYERS}/{MAXPLAYERS}]",
+            "hunger" => false,
+            "use.regenation.system" => true,
             ));
         $langs = $this->default->get("languages.folder");
         $this->langs = new Config($this->getDataFolder() . "langs/" . $langs.".yml" , Config::YAML, Array(
@@ -93,6 +97,11 @@ class Loader extends PluginBase{
             $this->getLogger()->info(" ");
             $this->getLogger()->info("§aMotd Enabled...");
         }
+        if($this->default->get("hunger") === false){
+            $this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask(array($this, "hunger")), 10);
+            $this->getLogger()->info(" ");
+            $this->getLogger()->info("§aHunger Enabled...");
+        }
         
         $this->getLogger()->info(" ");
         $this->getLogger()->info(" ");
@@ -105,6 +114,15 @@ class Loader extends PluginBase{
                     $motd = str_replace('{ONPLAYERS}', count($this->getServer()->getOnlinePlayers()), $motd);
                     $motd = str_replace('{MAXPLAYERS}', $this->getServer()->getMaxPlayers(), $motd);
                     $this->getServer()->getNetwork()->setName($motd);
+        }
+    }
+    
+    public function hunger(){
+        foreach($this->getServer()->getOnlinePlayers() as $players) {
+            $players->getPlayer()->setFood(15);
+            if($this->default->get("use.regenation.system") === true){
+                $players->addEffect(Effect::getEffect(10)->setAmplifier(1)->setDuration(2*20)->setVisible(false));
+            }
         }
     }
     

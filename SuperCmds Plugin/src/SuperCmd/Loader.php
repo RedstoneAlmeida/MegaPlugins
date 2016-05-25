@@ -12,6 +12,7 @@ use SuperCmd\Commands\FlyCommand;
 use SuperCmd\Commands\GameModeCommand;
 use SuperCmd\Commands\EffectCommand;
 use SuperCmd\Commands\MotdCommand;
+use SuperCmd\Commands\PluginCommand;
 
 class Loader extends PluginBase{
     
@@ -25,6 +26,7 @@ class Loader extends PluginBase{
             "gamemode" => true,
             "effect" => true,
             "motd.cmd" => true,
+            "plugin.cmd" => true,
             ));
         $this->default = new Config($this->getDataFolder() . "config.yml" , Config::YAML, Array(
             "languages.folder" => "en_us",
@@ -60,6 +62,10 @@ class Loader extends PluginBase{
         if($this->config->get("motd.cmd") === true){
          $server->getCommandMap()->register('motd', new MotdCommand($this,"motd")); 
          $this->getLogger()->info("§aMotdCMD is Enabled...");
+        }
+        if($this->config->get("plugin.cmd") === true){
+         $server->getCommandMap()->register('motd', new PluginCommand($this,"motd")); 
+         $this->getLogger()->info("§aPluginCMD is Enabled...");
         }
         if($this->config->get("fly") === true){
             if($this->config->get("gamemode") === true){

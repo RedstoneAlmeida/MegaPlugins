@@ -25,7 +25,6 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 ### Events
 - PlayerToggleSprintEvent set off or on
 - PlayerToggleSneakEvent set off or on
-- HideAndSeekSystem(beta) set off or on
 
 ### Small Events
 - Hunger and Regeneration System

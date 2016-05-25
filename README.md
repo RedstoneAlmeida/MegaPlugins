@@ -22,6 +22,11 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 - Set you server Motd
 - Disable or Enable Plugins!
 
+### Events
+- PlayerToggleSprintEvent set off or on
+- PlayerToggleSneakEvent set off or on
+- HideAndSeekSystem(beta) set off or on
+
 ### Small Events
 - Hunger and Regeneration System
 - Motd system
@@ -37,7 +42,6 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 | {MAXPLAYERS} | SET MAX PLAYERS IN MOTD | Server max online: [{MAXPLAYERS}] | config.yml |
 
 ### To-Do
-- Events
 - More Commands
 
 ### Last Update

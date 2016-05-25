@@ -3,8 +3,11 @@
 namespace SuperCmd;
 
 use pocketmine\plugin\PluginBase;
+use pocketmine\event\Listener;
 
 use pocketmine\Server;
+
+use pocketmine\Player;
 
 use pocketmine\scheduler\CallbackTask;
 
@@ -19,9 +22,16 @@ use SuperCmd\Commands\MotdCommand;
 use SuperCmd\Commands\PluginCommand;
 use SuperCmd\Commands\ItemInfoCommand;
 
-class Loader extends PluginBase{
+use SuperCmd\Events\PlayerEvents\PlayerToggleSprintEvent;
+use SuperCmd\Events\PlayerEvents\PlayerToggleSneakEvent;
+
+## Games
+use SuperCmd\Events\HideAndSeek\HideAndSeekSystem;
+
+class Loader extends PluginBase implements Listener{
     
     public function onEnable(){
+        $plevents = $this->getServer()->getPluginManager();
         @mkdir($this->getDataFolder());
         @mkdir($this->getDataFolder() . "langs/");
         @mkdir($this->getDataFolder() . "hints/");
@@ -33,6 +43,11 @@ class Loader extends PluginBase{
             "motd.cmd" => true,
             "plugin.cmd" => true,
             "iteminfo.cmd" => true,
+            ));
+        $this->events = new Config($this->getDataFolder() . "events.yml" , Config::YAML, Array(
+            "allow.sprint" => false,
+            "allow.shift" => false,
+            "hide.and.seek.system" => true,
             ));
         $this->default = new Config($this->getDataFolder() . "config.yml" , Config::YAML, Array(
             "languages.folder" => "en_us",
@@ -109,6 +124,19 @@ class Loader extends PluginBase{
             $this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask(array($this, "hunger")), 10);
             $this->getLogger()->info(" ");
             $this->getLogger()->info("§aHunger Enabled...");
+        }
+        if($this->events->get("allow.speed") === false){
+            $plevents->registerEvents(new PlayerToggleSprintEvent($this), $this);
+            $this->getLogger()->info(" ");
+            $this->getLogger()->info("§aEvents: SprintOFF Enabled...");
+        }
+        if($this->events->get("allow.shift") === false){
+            $plevents->registerEvents(new PlayerToggleSneakEvent($this), $this);
+            $this->getLogger()->info("§aEvents: SneakOFF Enabled...");
+        }
+        if($this->events->get("hide.and.seek.system") === true){
+            $plevents->registerEvents(new HideAndSeekSystem($this), $this);
+            $this->getLogger()->info("§aEvents: HideAndSeekSystem Enabled...");
         }
         
         $this->getLogger()->info(" ");

@@ -25,8 +25,6 @@ use SuperCmd\Commands\ItemInfoCommand;
 use SuperCmd\Events\PlayerEvents\PlayerToggleSprintEvent;
 use SuperCmd\Events\PlayerEvents\PlayerToggleSneakEvent;
 
-## Games
-use SuperCmd\Events\HideAndSeek\HideAndSeekSystem;
 
 class Loader extends PluginBase implements Listener{
     
@@ -47,7 +45,6 @@ class Loader extends PluginBase implements Listener{
         $this->events = new Config($this->getDataFolder() . "events.yml" , Config::YAML, Array(
             "allow.sprint" => false,
             "allow.shift" => false,
-            "hide.and.seek.system" => true,
             ));
         $this->default = new Config($this->getDataFolder() . "config.yml" , Config::YAML, Array(
             "languages.folder" => "en_us",
@@ -133,10 +130,6 @@ class Loader extends PluginBase implements Listener{
         if($this->events->get("allow.shift") === false){
             $plevents->registerEvents(new PlayerToggleSneakEvent($this), $this);
             $this->getLogger()->info("§aEvents: SneakOFF Enabled...");
-        }
-        if($this->events->get("hide.and.seek.system") === true){
-            $plevents->registerEvents(new HideAndSeekSystem($this), $this);
-            $this->getLogger()->info("§aEvents: HideAndSeekSystem Enabled...");
         }
         
         $this->getLogger()->info(" ");

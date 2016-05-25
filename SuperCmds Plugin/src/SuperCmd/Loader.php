@@ -17,6 +17,7 @@ use SuperCmd\Commands\GameModeCommand;
 use SuperCmd\Commands\EffectCommand;
 use SuperCmd\Commands\MotdCommand;
 use SuperCmd\Commands\PluginCommand;
+use SuperCmd\Commands\ItemInfoCommand;
 
 class Loader extends PluginBase{
     
@@ -31,6 +32,7 @@ class Loader extends PluginBase{
             "effect" => true,
             "motd.cmd" => true,
             "plugin.cmd" => true,
+            "iteminfo.cmd" => true,
             ));
         $this->default = new Config($this->getDataFolder() . "config.yml" , Config::YAML, Array(
             "languages.folder" => "en_us",
@@ -70,18 +72,24 @@ class Loader extends PluginBase{
          $this->getLogger()->info("§aMotdCMD is Enabled...");
         }
         if($this->config->get("plugin.cmd") === true){
-         $server->getCommandMap()->register('motd', new PluginCommand($this,"motd")); 
+         $server->getCommandMap()->register('plugin', new PluginCommand($this,"plugin")); 
          $this->getLogger()->info("§aPluginCMD is Enabled...");
+        }
+        if($this->config->get("iteminfo.cmd") === true){
+         $server->getCommandMap()->register('iinfo', new ItemInfoCommand($this,"iinfo")); 
+         $this->getLogger()->info("§aItemInfo is Enabled...");
         }
         if($this->config->get("fly") === true){
             if($this->config->get("gamemode") === true){
                 if($this->config->get("effect") === true){
                     if($this->config->get("motd.cmd") === true){
                         if($this->config->get("plugin.cmd") === true){
+                            if($this->config->get("iteminfo.cmd") === true){
                     $this->getLogger()->info(" ");
                     $this->getLogger()->info("§aALL Commands Enabled...");
+                            }
+                        }
                     }
-                }
                     
                 }
             }

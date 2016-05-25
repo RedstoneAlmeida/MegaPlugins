@@ -14,6 +14,7 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 | /seffect | [effectID] [effectAmplifier] [effectDuration] | add to you player effect | effect.command | /seffecter | 
 | /motd | [you motd] | set you server motd | motd.command | /smotd |
 | /plugin | [enable or disable] | disable or enable plugins in you server console or player client | plugin.command | /splg |
+| /iinfo | <not found> | viewer id,count and damage item in hand! | iteminfo.command | /siinfo |
 
 ### Features
 - Enable or Disable Commands in commands.yml

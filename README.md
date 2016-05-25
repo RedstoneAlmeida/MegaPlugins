@@ -42,6 +42,7 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 
 ### Last Update
 - Viewer: [Commit](https://github.com/RedstoneAlmeida/MegaPlugins/commit/8b162d70cb29c9e0d4a899002ec728bfa18d2d5c)
+- Release : [Download](https://github.com/RedstoneAlmeida/MegaPlugins/releases/tag/SuperCMDS)
 
 ### Configs - Code
 #### Hunger System

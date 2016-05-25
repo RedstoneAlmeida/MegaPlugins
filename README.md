@@ -28,6 +28,8 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 | {AMP} | SET AMPLIFIER TO EFFECT | Seted {AMP} to You Effect | you_lang.yml |
 | {SECONDS} | SET SECONDS TO EFFECT | Seted {SECONDS} to You Effect | you_lang.yml |
 | {GM} | SET YOU GAMEMODE | Changed you Gamemode to {GM} | you_lang.yml |
+| {ONPLAYERS} | SET ONLINE PLAYERS IN MOTD | Server is online: [{ONPLAYERS}] | config.yml |
+| {MAXPLAYERS} | SET MAX PLAYERS IN MOTD | Server max online: [{MAXPLAYERS}] | config.yml |
 
 ### To-Do
 - Events

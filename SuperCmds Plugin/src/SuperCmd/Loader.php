@@ -71,9 +71,11 @@ class Loader extends PluginBase{
             if($this->config->get("gamemode") === true){
                 if($this->config->get("effect") === true){
                     if($this->config->get("motd.cmd") === true){
+                        if($this->config->get("plugin.cmd") === true){
                     $this->getLogger()->info(" ");
                     $this->getLogger()->info("§aALL Commands Enabled...");
                     }
+                }
                     
                 }
             }

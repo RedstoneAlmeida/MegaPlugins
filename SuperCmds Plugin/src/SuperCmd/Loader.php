@@ -39,7 +39,7 @@ class Loader extends PluginBase{
             "motd.system" => true,
             "motd" => "Testing Motd [{ONPLAYERS}/{MAXPLAYERS}]",
             "hunger" => false,
-            "use.regenation.system" => true,
+            "use.regeneration.system" => true,
             ));
         $langs = $this->default->get("languages.folder");
         $this->langs = new Config($this->getDataFolder() . "langs/" . $langs.".yml" , Config::YAML, Array(
@@ -120,7 +120,7 @@ class Loader extends PluginBase{
     public function hunger(){
         foreach($this->getServer()->getOnlinePlayers() as $players) {
             $players->getPlayer()->setFood(15);
-            if($this->default->get("use.regenation.system") === true){
+            if($this->default->get("use.regeneration.system") === true){
                 $players->setHealth($players->getPlayer()->getHealth() + 1);
             }
         }

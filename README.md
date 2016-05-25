@@ -37,3 +37,29 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 
 ### Last Update
 - Viewer: [Commit](https://github.com/RedstoneAlmeida/MegaPlugins/commit/8b162d70cb29c9e0d4a899002ec728bfa18d2d5c)
+
+### Configs - Code
+#### Hunger System
+```php
+---
+hunger: false
+use.regenation.system: true
+...
+```
+
+```php
+if($this->default->get("hunger") === false){
+            $this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask(array($this, "hunger")), 10);
+            $this->getLogger()->info(" ");
+            $this->getLogger()->info("§aHunger Enabled...");
+        }
+
+public function hunger(){
+        foreach($this->getServer()->getOnlinePlayers() as $players) {
+            $players->getPlayer()->setFood(15);
+            if($this->default->get("use.regenation.system") === true){
+                $players->setHealth($players->getPlayer()->getHealth() + 1);
+            }
+        }
+    }
+```

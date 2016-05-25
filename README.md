@@ -13,11 +13,13 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 | /gmd | [1,2,3,4] | change you gamemode in server | gmd.command | /gmode | 
 | /seffect | [effectID] [effectAmplifier] [effectDuration] | add to you player effect | effect.command | /seffecter | 
 | /motd | [you motd] | set you server motd | motd.command | /smotd |
+| /plugin | [enable or disable] | disable or enable plugins in you server console or player client | plugin.command | /splg |
 
 ### Features
 - Enable or Disable Commands in commands.yml
 - Change Lang in Config
 - Set you server Motd
+- Disable or Enable Plugins!
 
 ### Variables
 | Variable | Info | Example | Config |
@@ -32,4 +34,4 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 - More Commands
 
 ### Last Update
-- Viewer: [Commit](https://github.com/RedstoneAlmeida/MegaPlugins/commit/f6edd288c45afd5ba6b879f7448c4662c72302c9)
+- Viewer: [Commit](https://github.com/RedstoneAlmeida/MegaPlugins/commit/8b162d70cb29c9e0d4a899002ec728bfa18d2d5c)

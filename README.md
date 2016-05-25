@@ -21,6 +21,10 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 - Set you server Motd
 - Disable or Enable Plugins!
 
+### Small Events
+- Hunger and Regeneration System
+- Motd system
+
 ### Variables
 | Variable | Info | Example | Config |
 | ------- | ---- | ------ | ----- |

@@ -6,6 +6,8 @@ use pocketmine\plugin\PluginBase;
 
 use pocketmine\Server;
 
+use pocketmine\scheduler\CallbackTask;
+
 use pocketmine\utils\Config;
 
 use SuperCmd\Commands\FlyCommand;
@@ -33,7 +35,7 @@ class Loader extends PluginBase{
             "hint.folder" => true,
             "console.msg" => "§cRun command in game",
             "motd.system" => true,
-            "motd" => "Testing Motd",
+            "motd" => "Testing Motd [{ONPLAYERS}/{MAXPLAYERS}]",
             ));
         $langs = $this->default->get("languages.folder");
         $this->langs = new Config($this->getDataFolder() . "langs/" . $langs.".yml" , Config::YAML, Array(
@@ -64,7 +66,7 @@ class Loader extends PluginBase{
          $this->getLogger()->info("§aMotdCMD is Enabled...");
         }
         if($this->config->get("plugin.cmd") === true){
-         $server->getCommandMap()->register('plugin', new PluginCommand($this,"plugin")); 
+         $server->getCommandMap()->register('motd', new PluginCommand($this,"motd")); 
          $this->getLogger()->info("§aPluginCMD is Enabled...");
         }
         if($this->config->get("fly") === true){
@@ -87,8 +89,7 @@ class Loader extends PluginBase{
         }
         
         if($this->default->get("motd.system") === true){
-            $motd = $this->default->get("motd");
-            $this->getServer()->getNetwork()->setName($motd);
+            $this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask(array($this, "motdsystem")), 10);
             $this->getLogger()->info(" ");
             $this->getLogger()->info("§aMotd Enabled...");
         }
@@ -97,6 +98,17 @@ class Loader extends PluginBase{
         $this->getLogger()->info(" ");
         $this->getLogger()->info("§b*§7-§b*§7-§b*§7-§b*§7-§b*§7-§b*");
     }
+    
+    public function motdsystem(){
+ 		if($this->default->get("motd.system") === true){
+                    $motd = $this->default->get("motd");
+                    $motd = str_replace('{ONPLAYERS}', count($this->getServer()->getOnlinePlayers()), $motd);
+                    $motd = str_replace('{MAXPLAYERS}', $this->getServer()->getMaxPlayers(), $motd);
+                    $this->getServer()->getNetwork()->setName($motd);
+        }
+    }
+    
+    
 }
     
     

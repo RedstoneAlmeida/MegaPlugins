@@ -64,7 +64,7 @@ class Loader extends PluginBase{
          $this->getLogger()->info("§aMotdCMD is Enabled...");
         }
         if($this->config->get("plugin.cmd") === true){
-         $server->getCommandMap()->register('motd', new PluginCommand($this,"motd")); 
+         $server->getCommandMap()->register('plugin', new PluginCommand($this,"plugin")); 
          $this->getLogger()->info("§aPluginCMD is Enabled...");
         }
         if($this->config->get("fly") === true){

@@ -36,7 +36,7 @@ class MotdCommand extends Command{
                     $motd = implode(" ", $args);
                     $this->plugin->default->set("motd",$motd);
                     $this->plugin->default->save();
-                    $sender->sendMessage("§cUse /reload to reload MOTD");
+                    $sender->sendMessage("§cYou Server Motd Changed");
                 }
    }
    

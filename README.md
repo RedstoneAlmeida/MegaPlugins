@@ -27,7 +27,8 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 - PlayerToggleSneakEvent set off or on
 
 ### Small Events
-- Hunger and Regeneration System
+- Disable Hunger System
+- Regeneration System(beta system)
 - Motd system
 
 ### Variables

@@ -4,6 +4,7 @@ Variables Plugins, is not normal plugins from PocketMine-MP, Genisys, ImagicalMi
 | Plugins | Informational |
 | ---- | ------ |
 | SuperCmds | Added More Commands for you Server |
+| InvisibleSystem | Normal Player invisible on join |
 
 
 ## - SuperCmds
@@ -73,3 +74,10 @@ public function hunger(){
         }
     }
 ```
+
+
+## - InvisibleSystem
+### Features
+- ConfigSystem to set VIPs or Disable system
+- Player Normal on join receive effect invisibility
+- Player vip not receive effect invisibility on join

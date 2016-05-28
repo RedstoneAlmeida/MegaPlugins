@@ -1,0 +1,7 @@
+name: InvisibleSystemPL
+version: 0.1
+main: InvisibleSystem\Loader
+api:
+    - 1.13.1
+    - 2.0.0
+author: Reds

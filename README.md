@@ -87,7 +87,7 @@ SuperCmd::getInstance()->events->get("allow.sprint");
 
 SuperCmd::getInstance()->config->get(" ");
 SuperCmd::getInstance()->config->get("fly");
-´´´
+```
 
 
 ## - InvisibleSystem

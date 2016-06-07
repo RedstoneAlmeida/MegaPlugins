@@ -75,6 +75,20 @@ public function hunger(){
     }
 ```
 
+#### Get Configs
+```php
+use SuperCmd\Loader as SuperCmd;
+
+SuperCmd::getInstance()->default->get(" ");
+SuperCmd::getInstance()->default->get("hunger");
+
+SuperCmd::getInstance()->events->get(" ");
+SuperCmd::getInstance()->events->get("allow.sprint");
+
+SuperCmd::getInstance()->config->get(" ");
+SuperCmd::getInstance()->config->get("fly");
+´´´
+
 
 ## - InvisibleSystem
 ### Features

@@ -1,8 +1,0 @@
-name: SuperCmds
-main: SuperCmd\Loader
-version: 0.1
-api:
-    - 2.0.0
-    - 1.13.1
-author: Reds
-

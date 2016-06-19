@@ -1,9 +1,0 @@
----
-fly.msg.off: §bFly Off
-fly.msg.on: §bFly On
-## use {EFFECT} to Effect
-## use {AMP} to Amplifier
-## use {SECONDS} to Seconds
-## use {LINE} to Line, use line in effect.msg.use
-effect.msg.use: §bYou gived effect {EFFECT} * {AMP} for {SECONDS} seconds
-...
